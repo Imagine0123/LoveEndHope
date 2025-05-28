@@ -443,6 +443,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2835,7 +2848,115 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Soldier_2_Spritelist_0: 762697352553228568
+      Soldier_2_Spritelist_1: 1249656932945978731
+      Soldier_2_Spritelist_10: 3800816681976363587
+      Soldier_2_Spritelist_100: -935240449952177420
+      Soldier_2_Spritelist_101: 8342936003428073780
+      Soldier_2_Spritelist_102: 6942228733855342426
+      Soldier_2_Spritelist_103: -8114610001867236486
+      Soldier_2_Spritelist_104: -4701515656919357434
+      Soldier_2_Spritelist_105: -5226356298762013447
+      Soldier_2_Spritelist_106: 2517560804073426281
+      Soldier_2_Spritelist_107: 7388066146653588397
+      Soldier_2_Spritelist_11: -6550795779695333175
+      Soldier_2_Spritelist_12: 8931903151120919555
+      Soldier_2_Spritelist_13: -6952530099411900935
+      Soldier_2_Spritelist_14: 5568213219383135397
+      Soldier_2_Spritelist_15: -8960272547832235304
+      Soldier_2_Spritelist_16: -5039715549159948204
+      Soldier_2_Spritelist_17: -2623654902342665469
+      Soldier_2_Spritelist_18: -6837623768832676505
+      Soldier_2_Spritelist_19: -5733920478746061461
+      Soldier_2_Spritelist_2: -2951535959021476940
+      Soldier_2_Spritelist_20: 2045057681908308323
+      Soldier_2_Spritelist_21: 6026970160006676266
+      Soldier_2_Spritelist_22: 1702241860347150719
+      Soldier_2_Spritelist_23: 7363140577143913737
+      Soldier_2_Spritelist_24: -5118262553806079938
+      Soldier_2_Spritelist_25: 211997096279113320
+      Soldier_2_Spritelist_26: -4951961017686929261
+      Soldier_2_Spritelist_27: -1780863660841253023
+      Soldier_2_Spritelist_28: 6546849826771524779
+      Soldier_2_Spritelist_29: 6433184007752533117
+      Soldier_2_Spritelist_3: -2701318374399252565
+      Soldier_2_Spritelist_30: -2447707543797494937
+      Soldier_2_Spritelist_31: -8023783429143856847
+      Soldier_2_Spritelist_32: -5787082204101803163
+      Soldier_2_Spritelist_33: 2672275503826143100
+      Soldier_2_Spritelist_34: -8987375771341392204
+      Soldier_2_Spritelist_35: 8303458260565576495
+      Soldier_2_Spritelist_36: -3978522362456761657
+      Soldier_2_Spritelist_37: -5970255107616288879
+      Soldier_2_Spritelist_38: -735944721751198252
+      Soldier_2_Spritelist_39: 3949432627676219179
+      Soldier_2_Spritelist_4: 1871901541827414290
+      Soldier_2_Spritelist_40: -3618400160129752478
+      Soldier_2_Spritelist_41: -3128482139993979445
+      Soldier_2_Spritelist_42: 1320078584054053411
+      Soldier_2_Spritelist_43: 8997990093813463219
+      Soldier_2_Spritelist_44: -6033006308478638734
+      Soldier_2_Spritelist_45: -7786316851405843608
+      Soldier_2_Spritelist_46: -2012155515471443259
+      Soldier_2_Spritelist_47: -3080023932134993567
+      Soldier_2_Spritelist_48: 1802694703463654233
+      Soldier_2_Spritelist_49: 6759996940129804445
+      Soldier_2_Spritelist_5: -8368408798379050412
+      Soldier_2_Spritelist_50: 1605069646574451557
+      Soldier_2_Spritelist_51: -10391097388218337
+      Soldier_2_Spritelist_52: -3973772283581446961
+      Soldier_2_Spritelist_53: -5984054648142765828
+      Soldier_2_Spritelist_54: 8885424466167143481
+      Soldier_2_Spritelist_55: 2450761043390052296
+      Soldier_2_Spritelist_56: -280466856629155395
+      Soldier_2_Spritelist_57: 7867345371580017282
+      Soldier_2_Spritelist_58: -3411920813496849379
+      Soldier_2_Spritelist_59: -9088648446336804993
+      Soldier_2_Spritelist_6: 7677333253378415413
+      Soldier_2_Spritelist_60: 8759029186012949057
+      Soldier_2_Spritelist_61: 1289388561388714901
+      Soldier_2_Spritelist_62: -7725281340510324085
+      Soldier_2_Spritelist_63: -8062609152371083313
+      Soldier_2_Spritelist_64: -3362530925825964218
+      Soldier_2_Spritelist_65: 2111078215313031369
+      Soldier_2_Spritelist_66: 2997426938262979730
+      Soldier_2_Spritelist_67: -4954586931324695409
+      Soldier_2_Spritelist_68: -5671910655171576140
+      Soldier_2_Spritelist_69: -7390093816365385764
+      Soldier_2_Spritelist_7: -5683426363188263437
+      Soldier_2_Spritelist_70: -3388443009473196484
+      Soldier_2_Spritelist_71: -6422912595390745456
+      Soldier_2_Spritelist_72: -9113169433415674865
+      Soldier_2_Spritelist_73: 7408084007994252192
+      Soldier_2_Spritelist_74: 722068677524852977
+      Soldier_2_Spritelist_75: -5102062429477516057
+      Soldier_2_Spritelist_76: 3602901335011720802
+      Soldier_2_Spritelist_77: 6706588340307230673
+      Soldier_2_Spritelist_78: -7666942028824565591
+      Soldier_2_Spritelist_79: 530516430465011206
+      Soldier_2_Spritelist_8: -6043954502066774653
+      Soldier_2_Spritelist_80: 4051701273717033861
+      Soldier_2_Spritelist_81: -3211183338328852441
+      Soldier_2_Spritelist_82: -950715463164018432
+      Soldier_2_Spritelist_83: -2028996760558091488
+      Soldier_2_Spritelist_84: -6673223125049710388
+      Soldier_2_Spritelist_85: -1140555127436784958
+      Soldier_2_Spritelist_86: -4154499707607538436
+      Soldier_2_Spritelist_87: -3647666599823647190
+      Soldier_2_Spritelist_88: -8984918220545730988
+      Soldier_2_Spritelist_89: -996050841439935676
+      Soldier_2_Spritelist_9: 3736627482637988114
+      Soldier_2_Spritelist_90: 8634771073392243639
+      Soldier_2_Spritelist_91: -7940260024883414226
+      Soldier_2_Spritelist_92: 4573210670914179983
+      Soldier_2_Spritelist_93: 1594850970027640769
+      Soldier_2_Spritelist_94: 880085374956069571
+      Soldier_2_Spritelist_95: -5848942632099658010
+      Soldier_2_Spritelist_96: -7227290924767464385
+      Soldier_2_Spritelist_97: 3359821850078665832
+      Soldier_2_Spritelist_98: 7937757930798167341
+      Soldier_2_Spritelist_99: -7158365872535665605
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
