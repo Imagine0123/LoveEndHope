@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private int JumpCount;
     private int JumpLimit = 2;
     private SpriteRenderer sprite;
-    private enum PlayerState { Idle, Running, Jumping, Falling } // 0 1 2 3
+    private enum PlayerState { Idle, Running, Jumping, Falling, Melee, Shooting } // 0 1 2 3 4 5
     private PlayerState state;
     private Animator animator;
 
@@ -68,6 +68,16 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerState.Falling;
         }
+        else if (Input.GetKey(KeyCode.X))
+        {
+            state = PlayerState.Melee;
+        }
+
+        else if (Input.GetKey(KeyCode.Z) && GameObject.Find("PistolManager").GetComponent<PistolManager>().hasPistol)
+        {
+            state = PlayerState.Shooting;
+        }
+
         else
         {
             state = PlayerState.Idle;
