@@ -3,13 +3,21 @@ using UnityEngine;
 public class ZombieDamage : MonoBehaviour
 {
     public int damage;
-    public PlayerHealth playerHealth;
-    public PlayerMovement playerMovement;
+    private PlayerHealth playerHealth;
+    private PlayerMovement playerMovement;
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
+            if (playerHealth == null)
+            {
+                playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            }
+            if (playerMovement == null)
+            {
+                playerMovement = collision.gameObject.GetComponent<PlayerMovement>();
+            }
             playerMovement.KnockbackCounter = playerMovement.KnockbackLength;
             if (collision.transform.position.x <= transform.position.x)
             {
