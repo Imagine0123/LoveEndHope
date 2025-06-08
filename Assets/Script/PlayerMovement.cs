@@ -17,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     public float KnockbackCounter;
     public float KnockbackLength;
     public bool KnockFromRight;
+    public bool flipLeft;
+    public bool facingRight;
 
 
     private void Awake()
@@ -51,19 +53,31 @@ public class PlayerMovement : MonoBehaviour
             JumpCount++;
         }
 
-        FlipSprite();
-        UpdateState();
-    }
-
-    private void FlipSprite()
-    {
         if (Body.linearVelocity.x > 0.1f)
         {
-            sprite.flipX = false;
+            facingRight = true;
+            FlipSprite(true);
         }
         else if (Body.linearVelocity.x < -0.1f)
         {
-            sprite.flipX = true;
+            facingRight = false;
+            FlipSprite(false);
+        }
+
+        UpdateState();
+    }
+
+    private void FlipSprite(bool facingRight)
+    {
+        if (flipLeft && facingRight)
+        {
+            transform.Rotate(0f, -180f, 0f);
+            flipLeft = false;
+        }
+        else if (!flipLeft && !facingRight)
+        {
+            transform.Rotate(0f, -180f, 0f);
+            flipLeft = true;
         }
     }
 
@@ -86,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.Melee;
         }
 
-        else if (Input.GetKey(KeyCode.Z) && pistolManager.hasPistol)
+        else if (Input.GetButton("Fire1") && pistolManager.hasPistol)
         {
             state = PlayerState.Shooting;
         }

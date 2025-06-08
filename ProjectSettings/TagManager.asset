@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Bullet
+  - Zombie
   layers:
   - Default
   - TransparentFX
@@ -50,6 +52,9 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 3865283543
+    locked: 0
+  - name: Bullet
+    uniqueID: 1086958169
     locked: 0
   m_RenderingLayers:
   - Default
