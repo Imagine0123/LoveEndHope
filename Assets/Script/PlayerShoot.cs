@@ -28,7 +28,7 @@ public class PlayerShoot : MonoBehaviour
         // Instantiate the bullet prefab at the muzzle point.
         if (bulletPrefab != null && muzzlePoint != null)
         {
-            Instantiate(bulletPrefab, transform.position + new Vector3(0, 0.5f, 0), Quaternion.identity, null);
+            Instantiate(bulletPrefab, muzzlePoint.position + new Vector3(0, 0.5f, 0), Quaternion.identity, null);
             // (Optionally, play muzzle flash, sound, etc.)
         }
         else
