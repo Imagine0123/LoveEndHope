@@ -11,6 +11,13 @@ public class PlayerMovement : MonoBehaviour
     private enum PlayerState { Idle, Running, Jumping, Falling, Melee, Shooting } // 0 1 2 3 4 5
     private PlayerState state;
     private Animator animator;
+    public PistolManager pistolManager;
+
+    public float KnockbackForce;
+    public float KnockbackCounter;
+    public float KnockbackLength;
+    public bool KnockFromRight;
+
 
     private void Awake()
     {
@@ -21,16 +28,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);
-
-        /*if (Input.GetKey(KeyCode.LeftShift))
+        if (KnockbackCounter <= 0)
         {
-            speed = 16;
+            Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);
         }
         else
         {
-            speed = 8;
-        }*/
+            if (KnockFromRight == true)
+            {
+                Body.linearVelocity = new Vector2(-KnockbackForce, KnockbackForce);
+            }
+            if (KnockFromRight == false)
+            {
+                Body.linearVelocity = new Vector2(KnockbackForce, KnockbackForce);
+            }
+            KnockbackCounter -= Time.deltaTime;
+        }
 
         if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
         {
@@ -73,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.Melee;
         }
 
-        else if (Input.GetKey(KeyCode.Z) && GameObject.Find("PistolManager").GetComponent<PistolManager>().hasPistol)
+        else if (Input.GetKey(KeyCode.Z) && pistolManager.hasPistol)
         {
             state = PlayerState.Shooting;
         }
