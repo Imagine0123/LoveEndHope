@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2380425957936813184}
   - component: {fileID: 6819826493142558419}
   m_Layer: 0
-  m_Name: PistolManager
+  m_Name: PickUpManager
   m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -16,7 +16,7 @@ public class ProjectileLaunch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && shootCount <= 0 && PistolManager.instance.hasPistol)
+        if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol)
         {
             Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
             shootCount = shootTime;

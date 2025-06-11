@@ -1,11 +1,11 @@
 using UnityEngine;
-using TMPro;
 
-public class PistolManager : MonoBehaviour
+public class PickUpManager : MonoBehaviour
 {
-    public static PistolManager instance;
+    public static PickUpManager instance;
     public bool hasPistol = false;
     public GameObject pistolIcon;
+    public GameObject knifeIcon;
     private void Awake()
     {
         // Classic singleton pattern (no “DontDestroy” for now, but you could add it if you need persistence across scenes).
@@ -21,6 +21,12 @@ public class PistolManager : MonoBehaviour
         if (hasPistol == true)
         {
             pistolIcon.SetActive(true);
+            knifeIcon.SetActive(false);
+        }
+        else
+        {
+            pistolIcon.SetActive(false);
+            knifeIcon.SetActive(true);
         }
     }
 

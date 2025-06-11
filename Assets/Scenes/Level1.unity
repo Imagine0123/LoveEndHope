@@ -366,6 +366,7 @@ RectTransform:
   m_Children:
   - {fileID: 709543252}
   - {fileID: 1683843196}
+  - {fileID: 1458744799}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1096,6 +1097,81 @@ Transform:
   - {fileID: 581790152}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1458744798
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1458744799}
+  - component: {fileID: 1458744801}
+  - component: {fileID: 1458744800}
+  m_Layer: 5
+  m_Name: Knife
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1458744799
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458744798}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 489427776}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -80, y: -80}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1458744800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458744798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 6448555928379709993, guid: 3fa13b6be0328f94a9ebeb7f8d22e4eb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1458744801
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1458744798}
+  m_CullTransparentMesh: 1
 --- !u!1 &1683843195
 GameObject:
   m_ObjectHideFlags: 0
@@ -4877,6 +4953,10 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 4778872566036778763, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
+      propertyPath: pickUpManager
+      value: 
+      objectReference: {fileID: 334960670}
+    - target: {fileID: 4778872566036778763, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
       propertyPath: pistolManager
       value: 
       objectReference: {fileID: 334960670}
@@ -5029,8 +5109,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2535854103513251194, guid: 468c0f463dc23a148896b18e1265a297, type: 3}
       propertyPath: m_Name
-      value: PistolManager
+      value: PickUpManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6819826493142558419, guid: 468c0f463dc23a148896b18e1265a297, type: 3}
+      propertyPath: knifeIcon
+      value: 
+      objectReference: {fileID: 1458744798}
     - target: {fileID: 6819826493142558419, guid: 468c0f463dc23a148896b18e1265a297, type: 3}
       propertyPath: pistolIcon
       value: 

@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private enum PlayerState { Idle, Running, Jumping, Falling, Melee, Shooting } // 0 1 2 3 4 5
     private PlayerState state;
     private Animator animator;
-    public PistolManager pistolManager;
+    public PickUpManager pickUpManager;
 
     public float KnockbackForce;
     public float KnockbackCounter;
@@ -100,7 +100,7 @@ public class PlayerMovement : MonoBehaviour
             state = PlayerState.Melee;
         }
 
-        else if (Input.GetButton("Fire1") && pistolManager.hasPistol)
+        else if (Input.GetButton("Fire1") && pickUpManager.hasPistol)
         {
             state = PlayerState.Shooting;
         }

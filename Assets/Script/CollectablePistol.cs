@@ -14,9 +14,9 @@ public class Collectable : MonoBehaviour
             collected = true;
 
             // 1) Tell PistolManager: the player now has a pistol
-            if (PistolManager.instance != null)
+            if (PickUpManager.instance != null)
             {
-                PistolManager.instance.GrantPistol();
+                PickUpManager.instance.GrantPistol();
             }
             else
             {
