@@ -5,9 +5,7 @@ public class PistolManager : MonoBehaviour
 {
     public static PistolManager instance;
     public bool hasPistol = false;
-
-    [SerializeField] private TMP_Text pistolText;
-
+    public GameObject pistolIcon;
     private void Awake()
     {
         // Classic singleton pattern (no “DontDestroy” for now, but you could add it if you need persistence across scenes).
@@ -20,9 +18,9 @@ public class PistolManager : MonoBehaviour
     private void Update()
     {
         // Every frame, update the UI text to reflect hasPistol:
-        if (pistolText != null)
+        if (hasPistol == true)
         {
-            pistolText.text = hasPistol ? "Pistol" : "No Pistol";
+            pistolIcon.SetActive(true);
         }
     }
 
