@@ -8,10 +8,11 @@ public class PlayerMovement : MonoBehaviour
     private int JumpCount;
     private int JumpLimit = 2;
     private SpriteRenderer sprite;
-    private enum PlayerState { Idle, Running, Jumping, Falling, Melee, Shooting } // 0 1 2 3 4 5
+    private enum PlayerState { Idle, Running, Jumping, Falling, Melee, Shooting, Reloading } // 0 1 2 3 4 5 6
     private PlayerState state;
     private Animator animator;
     public PickUpManager pickUpManager;
+    public ProjectileLaunch projectileLaunch;
 
     public float KnockbackForce;
     public float KnockbackCounter;
@@ -20,6 +21,8 @@ public class PlayerMovement : MonoBehaviour
     public bool flipLeft;
     public bool facingRight;
 
+    private float reloadTimer;
+    private bool isReloading;
 
     private void Awake()
     {
@@ -30,38 +33,56 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if (KnockbackCounter <= 0)
+        if (KnockbackCounter <= 0 && !isReloading)
         {
             Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);
         }
-        else
+        else if (KnockbackCounter > 0)
         {
-            if (KnockFromRight == true)
+            if (KnockFromRight)
             {
                 Body.linearVelocity = new Vector2(-KnockbackForce, KnockbackForce);
             }
-            if (KnockFromRight == false)
+            else
             {
                 Body.linearVelocity = new Vector2(KnockbackForce, KnockbackForce);
             }
             KnockbackCounter -= Time.deltaTime;
         }
 
-        if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
+        if (isReloading)
         {
-            Body.linearVelocity = new Vector2(Body.linearVelocity.x, jumpHeight);
-            JumpCount++;
+            reloadTimer -= Time.deltaTime;
+            if (reloadTimer <= 0)
+            {
+                isReloading = false;
+                projectileLaunch.Reload();
+            }
         }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
+            {
+                Body.linearVelocity = new Vector2(Body.linearVelocity.x, jumpHeight);
+                JumpCount++;
+            }
 
-        if (Body.linearVelocity.x > 0.1f)
-        {
-            facingRight = true;
-            FlipSprite(true);
-        }
-        else if (Body.linearVelocity.x < -0.1f)
-        {
-            facingRight = false;
-            FlipSprite(false);
+            if (Body.linearVelocity.x > 0.1f)
+            {
+                facingRight = true;
+                FlipSprite(true);
+            }
+            else if (Body.linearVelocity.x < -0.1f)
+            {
+                facingRight = false;
+                FlipSprite(false);
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                isReloading = true;
+                reloadTimer = 2.15f;
+            }
         }
 
         UpdateState();
@@ -99,12 +120,14 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerState.Melee;
         }
-
-        else if (Input.GetButton("Fire1") && pickUpManager.hasPistol)
+        else if (Input.GetButton("Fire1") && pickUpManager.hasPistol && projectileLaunch.currentClip > 0)
         {
             state = PlayerState.Shooting;
         }
-
+        else if (isReloading)
+        {
+            state = PlayerState.Reloading;
+        }
         else
         {
             state = PlayerState.Idle;

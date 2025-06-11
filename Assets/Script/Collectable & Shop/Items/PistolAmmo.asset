@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 972726c1637daac4da554d5ab1f7daac, type: 3}
+  m_Name: PistolAmmo
+  m_EditorClassIdentifier: 
+  itemName: Pistol Ammo
+  description: 7mm ammo for the Pistol
+  icon: {fileID: 663161967482776611, guid: 3fa13b6be0328f94a9ebeb7f8d22e4eb, type: 3}
+  isGold: 0
+  currentHealth: 0
+  maxHealth: 0
+  speed: 0
+  damage: 0
+  duration: 0

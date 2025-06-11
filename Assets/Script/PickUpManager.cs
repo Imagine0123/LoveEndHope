@@ -6,6 +6,7 @@ public class PickUpManager : MonoBehaviour
     public bool hasPistol = false;
     public GameObject pistolIcon;
     public GameObject knifeIcon;
+    public GameObject AmmoCount;
     private void Awake()
     {
         // Classic singleton pattern (no “DontDestroy” for now, but you could add it if you need persistence across scenes).
@@ -22,11 +23,13 @@ public class PickUpManager : MonoBehaviour
         {
             pistolIcon.SetActive(true);
             knifeIcon.SetActive(false);
+            AmmoCount.SetActive(true);
         }
         else
         {
             pistolIcon.SetActive(false);
             knifeIcon.SetActive(true);
+            AmmoCount.SetActive(false);
         }
     }
 

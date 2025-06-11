@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Collectable : MonoBehaviour
+public class CollectablePistol : MonoBehaviour
 {
     private bool collected = false;
 
