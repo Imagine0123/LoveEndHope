@@ -7,7 +7,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            projectileLaunch.AddAmmo(20);
+            projectileLaunch.AddAmmo(projectileLaunch.maxClip * 2);
             Destroy(gameObject);
         }
     }
