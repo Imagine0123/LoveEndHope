@@ -81,7 +81,7 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.R))
             {
                 isReloading = true;
-                reloadTimer = 2.15f;
+                reloadTimer = 1.65f;
             }
         }
 
