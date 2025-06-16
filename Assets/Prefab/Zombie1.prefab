@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7219482833147909584}
   - component: {fileID: 7827474349932059935}
   - component: {fileID: 1344553792166709353}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Zombie1
   m_TagString: Zombie
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 798972d4a1e39bf4f80b412d57f54e28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 20
 --- !u!114 &1344553792166709353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -228,5 +228,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2cf6864c3229ec4f805f3c998d9dc4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 10
+  maxHealth: 100
   health: 0

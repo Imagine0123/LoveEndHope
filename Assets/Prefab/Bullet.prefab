@@ -168,6 +168,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   projRigidBody: {fileID: 4405964376871602843}
   speed: 20
-  damage: 2
+  damage: 20
   projLife: 2
   projCount: 0
+  playerMovement: {fileID: 0}
+  facingRight: 0

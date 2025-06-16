@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2036511400581608261}
   - component: {fileID: 9209425817672498524}
   - component: {fileID: 5938981828834775761}
+  - component: {fileID: 8883364954538948819}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -37,6 +38,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4223608702845359930}
+  - {fileID: 359150780337354248}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3306092826136285153
@@ -172,7 +174,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 12
   jumpHeight: 15
-  pistolManager: {fileID: 6819826493142558419, guid: 468c0f463dc23a148896b18e1265a297, type: 3}
+  pickUpManager: {fileID: 0}
+  projectileLaunch: {fileID: 0}
   KnockbackForce: 6
   KnockbackCounter: 0
   KnockbackLength: 0.2
@@ -232,6 +235,61 @@ MonoBehaviour:
   muzzle: {fileID: 4223608702845359930}
   shootTime: 0.5
   shootCount: 0
+  currentAmmo: 0
+  maxAmmo: 0
+  currentClip: 0
+  maxClip: 0
+--- !u!114 &8883364954538948819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2572116330002447624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3617d5fcca20f2343b8f0098be1cd924, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackOrigin: {fileID: 359150780337354248}
+  attackRadius: 1.22
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 64
+  attackDamage: 1
+  knockbackForce: 10
+  cooldownTime: 1
+--- !u!1 &4603574866337709975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 359150780337354248}
+  m_Layer: 0
+  m_Name: MeleeZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &359150780337354248
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4603574866337709975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.41, y: 0.46, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5142197428212811627}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5893523315865653128
 GameObject:
   m_ObjectHideFlags: 0

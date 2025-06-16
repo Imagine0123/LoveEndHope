@@ -116,7 +116,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerState.Falling;
         }
-        else if (Input.GetKey(KeyCode.X))
+        else if (Input.GetKey(KeyCode.F))
         {
             state = PlayerState.Melee;
         }
