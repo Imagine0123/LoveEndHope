@@ -22,6 +22,7 @@ public class ProjectileLaunch : MonoBehaviour
     {
         if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0)
         {
+            SoundManager.instance.PlaySound2D("PistolShoot");
             Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
             shootCount = shootTime;
             currentClip--;

@@ -8,6 +8,7 @@ public class ZombiePatrol : MonoBehaviour
     private Animator anim;
     private Transform currentPoint;
     public float speed;
+    public float stepTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -25,25 +26,44 @@ public class ZombiePatrol : MonoBehaviour
         if (currentPoint == pointB.transform)
         {
             rb.linearVelocity = new Vector2(speed, 0f);
+            if (stepTimer > 0)
+            {
+                stepTimer -= Time.deltaTime;
+            }
+            else if (rb.linearVelocity.x != 0f)
+            {
+                SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
+                stepTimer = 0.8f;
+            }
         }
         else
         {
             rb.linearVelocity = new Vector2(-speed, 0f);
+            if (stepTimer > 0)
+            {
+                stepTimer -= Time.deltaTime;
+            }
+            else if (rb.linearVelocity.x != 0f)
+            {
+                SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
+                stepTimer = 0.8f;
+            }
+            
         }
 
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
         {
-            flip();
+            Flip();
             currentPoint = pointA.transform;
         }
         else if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
         {
-            flip();
+            Flip();
             currentPoint = pointB.transform;
         }
     }
 
-    private void flip()
+    private void Flip()
     {
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;

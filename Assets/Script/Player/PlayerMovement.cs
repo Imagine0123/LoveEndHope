@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float reloadTimer;
     private bool isReloading;
+    private float stepTimer;
 
     private void Awake()
     {
@@ -82,7 +83,18 @@ public class PlayerMovement : MonoBehaviour
             {
                 isReloading = true;
                 reloadTimer = 1.65f;
+                SoundManager.instance.PlaySound2D("PistolReload");
             }
+        }
+
+        if (stepTimer > 0)
+        {
+            stepTimer -= Time.deltaTime;
+        }
+        else if (Body.linearVelocity.x != 0f && !isReloading)
+        {
+            SoundManager.instance.PlaySound3D("PlayerFootstep", transform.position);
+            stepTimer = 0.5f;
         }
 
         UpdateState();

@@ -18,8 +18,10 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         slider.value = health;
+        SoundManager.instance.PlaySound2D("PlayerDamage");
         if (health <= 0)
         {
+            SoundManager.instance.PlaySound2D("PlayerDeath");
             Destroy(gameObject);
         }
     }

@@ -27,6 +27,7 @@ public class ZombieDamage : MonoBehaviour
             {
                 playerMovement.KnockFromRight = false;
             }
+            SoundManager.instance.PlaySound2D("ZombieBite");
             playerHealth.takeDamage(damage);
         }
     }
