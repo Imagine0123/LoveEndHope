@@ -10,7 +10,8 @@ public class MainMenu : MonoBehaviour
     }
     public void Play()
     {
-        SceneManager.LoadScene("Level1");
+        LevelManager.instance.LoadScene("Level1", "CrossFade");
+        MusicManager.instance.PlayMusic("Gameplay");
     }
 
     public void Quit()

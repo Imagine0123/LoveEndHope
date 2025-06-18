@@ -116,6 +116,8 @@ MonoBehaviour:
   tracks:
   - trackName: MenuMusic
     clip: {fileID: 8300000, guid: 8cb42a1b4eb969d4ea82b2e7f6cb06ac, type: 3}
+  - trackName: Gameplay
+    clip: {fileID: 8300000, guid: e18a6342a50f09945b2f6cb0c01a45eb, type: 3}
 --- !u!114 &5075748620038266778
 MonoBehaviour:
   m_ObjectHideFlags: 0
