@@ -4034,13 +4034,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 303227285}
   m_HandleRect: {fileID: 1591889960}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2012450097}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateSFXVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &694622656
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4135,7 +4147,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -4146,6 +4158,10 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 755334588}
@@ -4154,11 +4170,19 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 388475886}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 2012450097}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
@@ -4170,12 +4194,20 @@ PrefabInstance:
       value: SetActive
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: SaveVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: MainMenu, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
@@ -4191,6 +4223,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7798225697942539508, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8289572299116402183, guid: c7f4d6aeba46fb841a91cf073ccc7aa2, type: 3}
@@ -4645,13 +4681,25 @@ MonoBehaviour:
   m_FillRect: {fileID: 942641705}
   m_HandleRect: {fileID: 1917248831}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2012450097}
+        m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
+        m_MethodName: UpdateMusicVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &942641704
 GameObject:
   m_ObjectHideFlags: 0
@@ -5847,6 +5895,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cac1b8d061182bd4db4b807d84335f5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: fe0b030db819d6a46af314ef3134e580, type: 2}
+  musicSlider: {fileID: 914884224}
+  sfxSlider: {fileID: 638481940}
 --- !u!1 &2112083026
 GameObject:
   m_ObjectHideFlags: 0
