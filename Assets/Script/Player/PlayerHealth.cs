@@ -6,6 +6,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 10;
     public int health;
     public Slider slider;
+    public GameObject deathScreen;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,6 +22,7 @@ public class PlayerHealth : MonoBehaviour
         SoundManager.instance.PlaySound2D("PlayerDamage");
         if (health <= 0)
         {
+            deathScreen.SetActive(true);
             SoundManager.instance.PlaySound2D("PlayerDeath");
             Destroy(gameObject);
         }
