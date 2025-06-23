@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     public PickUpManager pickUpManager;
     public ProjectileLaunch projectileLaunch;
     public PauseMenu pauseMenu;
+    public PlayerHealth playerHealth;
 
     public float KnockbackForce;
     public float KnockbackCounter;
@@ -35,6 +36,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (transform.position.y <= -20f)
+        {
+            playerHealth.takeDamage(9999);
+        }
+
         if (KnockbackCounter <= 0 && !isReloading)
         {
             Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);

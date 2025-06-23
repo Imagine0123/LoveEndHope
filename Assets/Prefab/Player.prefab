@@ -83,7 +83,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -586465079
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: 23cd28fddd4f5614bb89612693b279cc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -175,7 +175,9 @@ MonoBehaviour:
   speed: 12
   jumpHeight: 15
   pickUpManager: {fileID: 0}
-  projectileLaunch: {fileID: 0}
+  projectileLaunch: {fileID: 5938981828834775761}
+  pauseMenu: {fileID: 0}
+  playerHealth: {fileID: 9209425817672498524}
   KnockbackForce: 6
   KnockbackCounter: 0
   KnockbackLength: 0.2
@@ -219,6 +221,7 @@ MonoBehaviour:
   maxHealth: 10
   health: 0
   slider: {fileID: 0}
+  deathScreen: {fileID: 0}
 --- !u!114 &5938981828834775761
 MonoBehaviour:
   m_ObjectHideFlags: 0
