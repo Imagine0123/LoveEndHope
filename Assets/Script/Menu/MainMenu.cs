@@ -1,6 +1,8 @@
+using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,12 +14,15 @@ public class MainMenu : MonoBehaviour
     public void Start()
     {
         LoadVolume();
-        MusicManager.instance.PlayMusic("MenuMusic");
+        if (SceneManager.GetActiveScene().name == "Menu")
+        {
+            MusicManager.instance.PlayMusic("MenuMusic");
+        }
     }
     public void Play()
     {
         LevelManager.instance.LoadScene("Level1", "CrossFade");
-        MusicManager.instance.PlayMusic("Gameplay");
+        MusicManager.instance.PlayMusic("GameMusic");
     }
 
     public void Quit()

@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Animator animator;
     public PickUpManager pickUpManager;
     public ProjectileLaunch projectileLaunch;
+    public PauseMenu pauseMenu;
 
     public float KnockbackForce;
     public float KnockbackCounter;
@@ -98,6 +99,10 @@ public class PlayerMovement : MonoBehaviour
         }
 
         UpdateState();
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            pauseMenu.Pause();
+        }
     }
 
     private void FlipSprite(bool facingRight)
