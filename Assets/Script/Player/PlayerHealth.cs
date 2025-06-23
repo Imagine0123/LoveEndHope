@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         health -= damage;
         slider.value = health;
         SoundManager.instance.PlaySound2D("PlayerDamage");
-        if (health <= 0)
+        if (health <= 0 || transform.position.y <= -20f)
         {
             deathScreen.SetActive(true);
             SoundManager.instance.PlaySound2D("PlayerDeath");
@@ -28,3 +28,4 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 }
+
