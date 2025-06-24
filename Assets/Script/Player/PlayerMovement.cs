@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     public ProjectileLaunch projectileLaunch;
     public PauseMenu pauseMenu;
     public PlayerHealth playerHealth;
+    public GameObject tutorialScreen;
 
     public float KnockbackForce;
     public float KnockbackCounter;
@@ -36,6 +37,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (tutorialScreen == isActiveAndEnabled)
+        {
+            if (Input.GetButtonDown("Horizontal"))
+            {
+                tutorialScreen.SetActive(false);
+            }
+        }
         if (transform.position.y <= -20f)
         {
             playerHealth.takeDamage(9999);
@@ -86,7 +94,7 @@ public class PlayerMovement : MonoBehaviour
                 FlipSprite(false);
             }
 
-            if (Input.GetKeyDown(KeyCode.R))
+            if (Input.GetKeyDown(KeyCode.R) && pickUpManager.hasPistol)
             {
                 isReloading = true;
                 reloadTimer = 1.65f;
