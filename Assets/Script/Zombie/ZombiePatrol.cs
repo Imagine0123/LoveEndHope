@@ -9,6 +9,7 @@ public class ZombiePatrol : MonoBehaviour
     private Transform currentPoint;
     public float speed;
     public float stepTimer;
+    public float stunDuration;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,44 +23,46 @@ public class ZombiePatrol : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 point = currentPoint.position - transform.position;
-        if (currentPoint == pointB.transform)
+        if (IsStunned() == false)
         {
-            rb.linearVelocity = new Vector2(speed, 0f);
-            if (stepTimer > 0)
+            Vector2 point = currentPoint.position - transform.position;
+            if (currentPoint == pointB.transform)
             {
-                stepTimer -= Time.deltaTime;
+                rb.linearVelocity = new Vector2(speed, 0f);
+                if (stepTimer > 0)
+                {
+                    stepTimer -= Time.deltaTime;
+                }
+                else if (rb.linearVelocity.x != 0f)
+                {
+                    SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
+                    stepTimer = 0.8f;
+                }
             }
-            else if (rb.linearVelocity.x != 0f)
+            else
             {
-                SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
-                stepTimer = 0.8f;
+                rb.linearVelocity = new Vector2(-speed, 0f);
+                if (stepTimer > 0)
+                {
+                    stepTimer -= Time.deltaTime;
+                }
+                else if (rb.linearVelocity.x != 0f)
+                {
+                    SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
+                    stepTimer = 0.8f;
+                }
             }
-        }
-        else
-        {
-            rb.linearVelocity = new Vector2(-speed, 0f);
-            if (stepTimer > 0)
-            {
-                stepTimer -= Time.deltaTime;
-            }
-            else if (rb.linearVelocity.x != 0f)
-            {
-                SoundManager.instance.PlaySound3D("ZombieFootstep", transform.position);
-                stepTimer = 0.8f;
-            }
-            
-        }
 
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
-        {
-            Flip();
-            currentPoint = pointA.transform;
-        }
-        else if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
-        {
-            Flip();
-            currentPoint = pointB.transform;
+            if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+            {
+                Flip();
+                currentPoint = pointA.transform;
+            }
+            else if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform)
+            {
+                Flip();
+                currentPoint = pointB.transform;
+            }
         }
     }
 
@@ -75,5 +78,22 @@ public class ZombiePatrol : MonoBehaviour
         Gizmos.DrawWireSphere(pointA.transform.position, 0.5f);
         Gizmos.DrawWireSphere(pointB.transform.position, 0.5f);
         Gizmos.DrawLine(pointA.transform.position, pointB.transform.position);
+    }
+
+    public void Stun()
+    {
+        anim.SetBool("IsMoving", false);
+        rb.linearVelocity = Vector2.zero;
+        Invoke(nameof(Unstun), stunDuration);
+    }
+
+    private void Unstun()
+    {
+        anim.SetBool("IsMoving", true);
+    }
+
+    private bool IsStunned()
+    {
+        return anim.GetBool("IsMoving") == false;
     }
 }

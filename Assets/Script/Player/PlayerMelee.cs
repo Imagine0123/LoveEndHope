@@ -7,19 +7,19 @@ public class PlayerMelee : MonoBehaviour
     public LayerMask enemyMask;
 
     public int attackDamage;
-    public float knockbackForce = 10f;
+    public float stunDuration = 1f;
 
-    public float cooldownTime;
+    private float cooldownTime = 0.4f;
     private float cooldownTimer = 0f;
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(attackOrigin.position, attackRadius);
     }
-    // Update is called once per frame
+
     private void Update()
     {
-        if (cooldownTimer >= 0)
+        if (cooldownTimer <= 0)
         {
             if (Input.GetKey(KeyCode.F))
             {
@@ -28,11 +28,10 @@ public class PlayerMelee : MonoBehaviour
                 {
                     enemy.GetComponent<ZombieHealth>().takeDamage(attackDamage);
 
-                    Rigidbody2D rb = enemy.GetComponent<Rigidbody2D>();
-                    if (rb != null)
+                    ZombiePatrol patrol = enemy.GetComponent<ZombiePatrol>();
+                    if (patrol != null)
                     {
-                        Vector2 knockbackDirection = (enemy.transform.position - attackOrigin.position).normalized;
-                        rb.linearVelocity = knockbackDirection * knockbackForce;
+                        patrol.Stun();
                     }
                 }
                 cooldownTimer = cooldownTime;

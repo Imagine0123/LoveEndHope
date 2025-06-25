@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     private bool isReloading;
     private float stepTimer;
     private bool isShooting;
+    private float meleeTimer;
+    private bool isMeleeing;
 
     private void Awake()
     {
@@ -50,7 +52,7 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.takeDamage(9999);
         }
 
-        if (KnockbackCounter <= 0 && !isReloading && !isShooting)
+        if (KnockbackCounter <= 0 && !isReloading && !isShooting && !isMeleeing)
         {
             Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);
         }
@@ -90,6 +92,20 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             isShooting = false;
+        }
+
+        if (isMeleeing)
+        {
+            meleeTimer -= Time.deltaTime;
+            if (meleeTimer <= 0)
+            {
+                isMeleeing = false;
+            }
+        }
+        else if (Input.GetKey(KeyCode.F) && pauseMenu.isPaused == false)
+        {
+            isMeleeing = true;
+            meleeTimer = 0.4f;
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
@@ -157,7 +173,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerState.Falling;
         }
-        else if (Input.GetKey(KeyCode.F))
+        else if (isMeleeing)
         {
             state = PlayerState.Melee;
         }
@@ -185,3 +201,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 }
+

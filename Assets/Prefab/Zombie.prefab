@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 7827474349932059935}
   - component: {fileID: 1344553792166709353}
   m_Layer: 6
-  m_Name: Zombie1
+  m_Name: Zombie
   m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -586465079
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 4723107735738678597, guid: a7e9febeccdd04745b5ff8ad0496b2b3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,6 +204,7 @@ MonoBehaviour:
   pointB: {fileID: 0}
   speed: 2
   stepTimer: 0
+  stunDuration: 1
 --- !u!114 &7827474349932059935
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,22 +12,39 @@ public class ProjectileLaunch : MonoBehaviour
     public int maxAmmo;
     public int currentClip;
     public int maxClip;
+    public float animTimeMax;
+    private float animTime;
+    private bool isShooting;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         shootCount = shootTime;
+        isShooting = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0 && !pauseMenu.isPaused)
+        if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0 && !pauseMenu.isPaused && !isShooting)
         {
-            SoundManager.instance.PlaySound2D("PistolShoot");
-            Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
-            shootCount = shootTime;
-            currentClip--;
+            animTime = 0;
+            isShooting = true;
         }
+
+        if (isShooting)
+        {
+            animTime += Time.deltaTime;
+            if (animTime >= animTimeMax)
+            {
+                SoundManager.instance.PlaySound2D("PistolShoot");
+                Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
+                shootCount = shootTime;
+                currentClip--;
+                isShooting = false;
+            }
+        }
+
         shootCount -= Time.deltaTime;
     }
 
@@ -48,3 +65,4 @@ public class ProjectileLaunch : MonoBehaviour
         }
     }
 }
+

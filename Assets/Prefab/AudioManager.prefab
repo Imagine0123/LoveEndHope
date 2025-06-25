@@ -87,6 +87,29 @@ MonoBehaviour:
   - groupID: Click
     clips:
     - {fileID: 8300000, guid: 75e733d88126a114e97edf7669d64482, type: 3}
+  - groupID: ZombieDamage
+    clips:
+    - {fileID: 8300000, guid: 5b29b0de6b62747e68ebf332c8811f35, type: 3}
+    - {fileID: 8300000, guid: 4ab62cbf20de44a4582c40ed442be13a, type: 3}
+    - {fileID: 8300000, guid: ecff13b727eaf4888a9f6a3221bdb662, type: 3}
+    - {fileID: 8300000, guid: fb7fbee5d5ed64bd1a8ca1ad242ba7eb, type: 3}
+    - {fileID: 8300000, guid: 381951b7e211640659f2659520c3145b, type: 3}
+    - {fileID: 8300000, guid: 967208deb0e2849fdaf89dcc7413d1a9, type: 3}
+  - groupID: ZombieDeath
+    clips:
+    - {fileID: 8300000, guid: f462d308fc6a648b288adb78161502a5, type: 3}
+    - {fileID: 8300000, guid: 824a492d546744169b7e4460926ebb2a, type: 3}
+    - {fileID: 8300000, guid: 05f860bb66f844d89908829a80c6fe13, type: 3}
+    - {fileID: 8300000, guid: 69812e02fdf6c421a938309cc2d45922, type: 3}
+    - {fileID: 8300000, guid: 8b8be6e6b3dd044d782ae23b59519a28, type: 3}
+    - {fileID: 8300000, guid: 50be8f631d6a14da58b3ef230ec1c022, type: 3}
+  - groupID: BulletHitFlesh
+    clips:
+    - {fileID: 8300000, guid: 14adc7fbf27bb4b1c928053c1060edff, type: 3}
+    - {fileID: 8300000, guid: 16fda385ab14d48afb14d17af8326dd2, type: 3}
+    - {fileID: 8300000, guid: 3778450c5cc294c7cb8ec3885e111d00, type: 3}
+    - {fileID: 8300000, guid: 7b8f7cd6c1ac44425bef51e36781b251, type: 3}
+    - {fileID: 8300000, guid: a876179e000ff4ff09b30761b1a88595, type: 3}
 --- !u!114 &4244224345866530077
 MonoBehaviour:
   m_ObjectHideFlags: 0

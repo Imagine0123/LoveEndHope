@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 9209425817672498524}
   - component: {fileID: 5938981828834775761}
   - component: {fileID: 8883364954538948819}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -178,6 +178,7 @@ MonoBehaviour:
   projectileLaunch: {fileID: 5938981828834775761}
   pauseMenu: {fileID: 0}
   playerHealth: {fileID: 9209425817672498524}
+  tutorialScreen: {fileID: 0}
   KnockbackForce: 6
   KnockbackCounter: 0
   KnockbackLength: 0.2
@@ -236,6 +237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1652028675955167129, guid: 752c56bef4c25a545a5b4538096b653f, type: 3}
   muzzle: {fileID: 4223608702845359930}
+  pauseMenu: {fileID: 0}
   shootTime: 0.5
   shootCount: 0
   currentAmmo: 0
@@ -260,8 +262,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   attackDamage: 1
-  knockbackForce: 10
-  cooldownTime: 1
+  stunDuration: 1
 --- !u!1 &4603574866337709975
 GameObject:
   m_ObjectHideFlags: 0
@@ -271,7 +272,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 359150780337354248}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: MeleeZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4223608702845359930}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

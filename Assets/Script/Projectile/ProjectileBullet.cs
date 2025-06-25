@@ -55,7 +55,7 @@ public class ProjectileBullet : MonoBehaviour
             {
                 zombieHealth = collision.gameObject.GetComponent<ZombieHealth>();
             }
-            zombieHealth = collision.gameObject.GetComponent<ZombieHealth>();
+            SoundManager.instance.PlaySound2D("BulletHitFlesh");
             zombieHealth.takeDamage(damage);
         }
         Destroy(gameObject);
