@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     private float reloadTimer;
     private bool isReloading;
     private float stepTimer;
+    private bool isShooting;
 
     private void Awake()
     {
@@ -49,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
             playerHealth.takeDamage(9999);
         }
 
-        if (KnockbackCounter <= 0 && !isReloading)
+        if (KnockbackCounter <= 0 && !isReloading && !isShooting)
         {
             Body.linearVelocity = new Vector2(Input.GetAxis("Horizontal") * speed, Body.linearVelocity.y);
         }
@@ -75,38 +76,44 @@ public class PlayerMovement : MonoBehaviour
                 projectileLaunch.Reload();
             }
         }
+        else if (Input.GetKeyDown(KeyCode.R) && pickUpManager.hasPistol && pauseMenu.isPaused == false)
+        {
+            isReloading = true;
+            reloadTimer = 1.65f;
+            SoundManager.instance.PlaySound2D("PistolReload");
+        }
+
+        if (Input.GetButton("Fire1") && pickUpManager.hasPistol && projectileLaunch.currentClip > 0 && pauseMenu.isPaused == false)
+        {
+            isShooting = true;
+        }
         else
         {
-            if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
-            {
-                Body.linearVelocity = new Vector2(Body.linearVelocity.x, jumpHeight);
-                JumpCount++;
-            }
+            isShooting = false;
+        }
 
-            if (Body.linearVelocity.x > 0.1f)
-            {
-                facingRight = true;
-                FlipSprite(true);
-            }
-            else if (Body.linearVelocity.x < -0.1f)
-            {
-                facingRight = false;
-                FlipSprite(false);
-            }
+        if (Input.GetKeyDown(KeyCode.Space) && JumpCount < JumpLimit)
+        {
+            Body.linearVelocity = new Vector2(Body.linearVelocity.x, jumpHeight);
+            JumpCount++;
+        }
 
-            if (Input.GetKeyDown(KeyCode.R) && pickUpManager.hasPistol)
-            {
-                isReloading = true;
-                reloadTimer = 1.65f;
-                SoundManager.instance.PlaySound2D("PistolReload");
-            }
+        if (Body.linearVelocity.x > 0.1f)
+        {
+            facingRight = true;
+            FlipSprite(true);
+        }
+        else if (Body.linearVelocity.x < -0.1f)
+        {
+            facingRight = false;
+            FlipSprite(false);
         }
 
         if (stepTimer > 0)
         {
             stepTimer -= Time.deltaTime;
         }
-        else if (Body.linearVelocity.x != 0f && !isReloading)
+        else if (Body.linearVelocity.x != 0f && !isReloading && !isShooting)
         {
             SoundManager.instance.PlaySound3D("PlayerFootstep", transform.position);
             stepTimer = 0.5f;
@@ -115,7 +122,10 @@ public class PlayerMovement : MonoBehaviour
         UpdateState();
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            pauseMenu.Pause();
+            if (pauseMenu.isPaused)
+                pauseMenu.Resume();
+            else
+                pauseMenu.Pause();
         }
     }
 
@@ -151,7 +161,7 @@ public class PlayerMovement : MonoBehaviour
         {
             state = PlayerState.Melee;
         }
-        else if (Input.GetButton("Fire1") && pickUpManager.hasPistol && projectileLaunch.currentClip > 0)
+        else if (isShooting)
         {
             state = PlayerState.Shooting;
         }

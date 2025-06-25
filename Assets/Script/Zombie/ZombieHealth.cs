@@ -12,9 +12,11 @@ public class ZombieHealth : MonoBehaviour
 
     public void takeDamage(int damage)
     {
+        SoundManager.instance.PlaySound2D("ZombieDamage");
         health -= damage;
         if (health <= 0)
         {
+            SoundManager.instance.PlaySound2D("ZombieDeath");
             Destroy(gameObject);
         }
     }

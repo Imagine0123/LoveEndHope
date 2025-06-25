@@ -4,6 +4,7 @@ public class ProjectileLaunch : MonoBehaviour
 {
     public GameObject bulletPrefab;
     public Transform muzzle;
+    public PauseMenu pauseMenu;
 
     public float shootTime;
     public float shootCount;
@@ -20,7 +21,7 @@ public class ProjectileLaunch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0)
+        if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0 && !pauseMenu.isPaused)
         {
             SoundManager.instance.PlaySound2D("PistolShoot");
             Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
