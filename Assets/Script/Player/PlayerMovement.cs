@@ -138,7 +138,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMelee()
     {
-        if (Input.GetKeyDown(KeyCode.F) && !isMeleeing)
+        if (Input.GetKey(KeyCode.F) && !isMeleeing)
         {
             isMeleeing = true;
             meleeTimer = 0.4f;

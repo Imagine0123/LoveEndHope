@@ -600,7 +600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &201267130
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7900,7 +7900,7 @@ GameObject:
   - component: {fileID: 1743217951}
   - component: {fileID: 1743217950}
   - component: {fileID: 1743217949}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -100733,6 +100733,10 @@ PrefabInstance:
       propertyPath: projectileLaunch
       value: 
       objectReference: {fileID: 1897977588}
+    - target: {fileID: 4778872566036778763, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
+      propertyPath: groundLayer.m_Bits
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 5142197428212811627, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.93
@@ -100790,8 +100794,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 814698130}
     - target: {fileID: 5938981828834775761, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
+      propertyPath: shootTime
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5938981828834775761, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
       propertyPath: animTimeMax
-      value: 0.6
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6626859719883121749, guid: 13ea043fc3f234e4f992b1f212887b76, type: 3}
       propertyPath: m_Material
