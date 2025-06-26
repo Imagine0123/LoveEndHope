@@ -2,34 +2,42 @@ using UnityEngine;
 
 public class ProjectileLaunch : MonoBehaviour
 {
+    [Header("Setup")]
     public GameObject bulletPrefab;
     public Transform muzzle;
     public PauseMenu pauseMenu;
 
+    [Header("Timings & Cooldown")]
     public float shootTime;
     public float shootCount;
+    public float animTimeMax;
+    private float animTime;
+
+    [Header("Ammo")]
     public int currentAmmo;
     public int maxAmmo;
     public int currentClip;
     public int maxClip;
-    public float animTimeMax;
-    private float animTime;
+
+    private PlayerMovement playerMovement;
     private bool isShooting;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         shootCount = shootTime;
+        playerMovement = GetComponentInParent<PlayerMovement>();
         isShooting = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetButton("Fire1") && shootCount <= 0 && PickUpManager.instance.hasPistol && currentClip > 0 && !pauseMenu.isPaused && !isShooting)
         {
-            animTime = 0;
+            Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            playerMovement.ForceFlipTowards(mouseWorldPosition);
+
             isShooting = true;
+            animTime = 0;
         }
 
         if (isShooting)
@@ -38,14 +46,28 @@ public class ProjectileLaunch : MonoBehaviour
             if (animTime >= animTimeMax)
             {
                 SoundManager.instance.PlaySound2D("PistolShoot");
-                Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
+
+                Vector3 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                Vector2 direction = (mouseWorldPosition - muzzle.position).normalized;
+                
+                GameObject bullet = Instantiate(bulletPrefab, muzzle.position, Quaternion.identity);
+                Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+                ProjectileBullet projBullet = bullet.GetComponent<ProjectileBullet>();
+                if (projBullet != null)
+                {
+                    rb.linearVelocity = direction * projBullet.speed;
+                }
+
                 shootCount = shootTime;
                 currentClip--;
                 isShooting = false;
             }
         }
 
-        shootCount -= Time.deltaTime;
+        if (shootCount > 0)
+        {
+            shootCount -= Time.deltaTime;
+        }
     }
 
     public void Reload()
@@ -65,4 +87,3 @@ public class ProjectileLaunch : MonoBehaviour
         }
     }
 }
-
