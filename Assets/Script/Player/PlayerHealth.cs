@@ -19,7 +19,14 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= damage;
         slider.value = health;
-        SoundManager.instance.PlaySound2D("PlayerDamage");
+        if (damage > 0)
+        {
+            SoundManager.instance.PlaySound2D("PlayerDamage");
+        }
+        else if (damage < 0)
+        {
+            SoundManager.instance.PlaySound2D("PlayerHeal");
+        }
         if (health <= 0)
         {
             deathScreen.SetActive(true);
