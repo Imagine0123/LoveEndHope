@@ -4844,7 +4844,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8766204795966021496, guid: 57081cc404b5d5240b67ce4b9771e340, type: 3}
       propertyPath: m_Name
-      value: MRE Pack (1)
+      value: MRE Pack
       objectReference: {fileID: 0}
     - target: {fileID: 8921756778690544971, guid: 57081cc404b5d5240b67ce4b9771e340, type: 3}
       propertyPath: m_LocalPosition.x
@@ -101287,38 +101287,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: soundEffects.Array.size
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: soundEffects.Array.data[12].groupID
-      value: PlayerHeal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: soundEffects.Array.data[12].clips.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: 'soundEffects.Array.data[12].clips.Array.data[0]'
-      value: 
-      objectReference: {fileID: 8300000, guid: f28d0c96cc248984e842cc1409a60a7b, type: 3}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: 'soundEffects.Array.data[12].clips.Array.data[1]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 16fda385ab14d48afb14d17af8326dd2, type: 3}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: 'soundEffects.Array.data[12].clips.Array.data[2]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 3778450c5cc294c7cb8ec3885e111d00, type: 3}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: 'soundEffects.Array.data[12].clips.Array.data[3]'
-      value: 
-      objectReference: {fileID: 8300000, guid: 7b8f7cd6c1ac44425bef51e36781b251, type: 3}
-    - target: {fileID: 3085854257835350365, guid: ee634f8ff1d886544a6559fbcfa6cf23, type: 3}
-      propertyPath: 'soundEffects.Array.data[12].clips.Array.data[4]'
-      value: 
-      objectReference: {fileID: 8300000, guid: a876179e000ff4ff09b30761b1a88595, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -110,6 +110,9 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 3778450c5cc294c7cb8ec3885e111d00, type: 3}
     - {fileID: 8300000, guid: 7b8f7cd6c1ac44425bef51e36781b251, type: 3}
     - {fileID: 8300000, guid: a876179e000ff4ff09b30761b1a88595, type: 3}
+  - groupID: PlayerHeal
+    clips:
+    - {fileID: 8300000, guid: f28d0c96cc248984e842cc1409a60a7b, type: 3}
 --- !u!114 &4244224345866530077
 MonoBehaviour:
   m_ObjectHideFlags: 0
